@@ -1,0 +1,43 @@
+/*
+Original design by Andreas Viklund (http://andreasviklund.com/templates/basic-businesscard)
+*/
+
+/* Main layout and header */
+body {background:#eee url(img/bg.jpg) top center no-repeat; color:#555; font:83% Georgia,Times New Roman,serif; text-align:center; line-height:1.8em;}
+#wrap {width:610px; margin:40px auto 20px auto; background:gainsboro top left no-repeat; -moz-box-shadow: 3px 3px 15px #aaa; -webkit-box-shadow: 3px 3px 15px #aaa; box-shadow: 3px 3px 15px #aaa;}
+#logo {display: inline-block; margin: 0px 20px;}
+#logo img {border: 5px solid darkgrey; max-height: 200px; max-width: 200px;}
+#content {display: inline-block; margin:0 20px 35px 10px; width:360px; text-align:left;}
+#triples {width:590px; margin:0 auto 20px auto; text-align:left;}
+#triples h2 {font-size:1.4em; color:#888; margin:0 0 10px 0;}
+#triples p {font-size:1em; color:#888; margin:0 0 10px 0;}
+#footer {width:590px; color:#aaa; font-size:0.8em; margin:20px auto;}
+#footer a {color:#aaa;}
+#footer p {text-align:right;}
+.copyright {margin-left: 10px;}
+.icon {height: 18px;}
+.flag {height: 14px; opacity: 0.3; filter: alpha(opacity=30);}
+.flag.active {border: 1px solid darkgrey; opacity: 0.6; filter: alpha(opacity=60); height: 15px;}
+.flag:hover {opacity: 0.8; filter: alpha(opacity=80);}
+.quote {font-style: italic;}
+.quote-author {margin-left: 10px;}
+.quote-author a {color: #888}
+.quote-author a:hover {color: #555}
+
+
+h1 {font-size:3em; padding:25px 0 0 0; font-weight:400; text-shadow:2px 2px 4px #bbb;}
+h2 {font-size:1.6em; margin:-10px 0 25px 0; font-weight:400; text-shadow:2px 2px 4px #bbb;}
+h2.slogan {; color:#777; text-shadow:2px 2px 4px #ccc;}
+a {color:#0088CC; text-decoration:none;}
+a:hover {color:#005580;}
+img {max-width:560px;}
+img.alignleft {display:inline; float:left; margin:5px 15px 5px 0;}
+img.alignright {float:right; margin:5px 0 5px 15px;}
+img.aligncenter {display:block; margin:10px auto;}
+img.border {background:#f4f4f4; border:1px solid #ddd; padding:5px;}
+dl {width:360px; margin:0 auto; font-size:1.4em;}
+dt {float:left; clear:left; width:60px; text-align:right; color:#444; }
+dd {margin:0 0 0 70px; padding:0 0 10px 0; text-align:left;}
+
+.t1,.t2,.t3 {width:30%; margin:0 5% 0 0; float:left;}
+.t3 {margin:0;}
