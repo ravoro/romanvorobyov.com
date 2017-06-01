@@ -55,4 +55,10 @@ echo -e "\nEnabling new version of the website ..."
 mv ${TMP_DIR} ${SITE_DIR}
 
 
+# If running in embedded mode (instead of daemon), need to restart apache to reflect code changes
+# https://modwsgi.readthedocs.io/en/develop/user-guides/reloading-source-code.html
+echo -e "\nRestarting apache ..."
+service apache2 restart
+
+
 echo -e "\nDeployment done!"
