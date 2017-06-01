@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% set is_nav_about_active = True %}
+
+{% block content %}
+    <h1>About</h1>
+    <p>Hey, I'm Roman.</p>
+    <p>I'm an Full-Stack Web Developer <em>(with a Back-End focus - Python, Scala)</em>.</p>
+    <p>
+        A little bit about me:
+    <dl class="dl-horizontal">
+        <dt>Hobbies:</dt>
+        <dd>History, Photography, Football/Soccer</dd>
+        <dt>Languages:</dt>
+        <dd><em>Native - </em>Russian, English</dd>
+        <dd><em>Basic - </em>Polish, German</dd>
+    </dl>
+    </p>
+    <p>
+        You can find me on:
+        <a href="https://linkedin.com/in/romanvorobyov" target="_blank">LinkedIn</a>,
+        <a href="https://github.com/ravoro" target="_blank">GitHub</a>
+    </p>
+{% endblock %}

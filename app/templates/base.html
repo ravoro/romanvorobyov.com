@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {# The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags #}
+    <meta name="description" content="Roman Vorobyov is a Full-Stack Web Developer (with a Back-End focus).">
+    <meta name="author" content="Roman Vorobyov">
+    <meta name="google-site-verification" content="4me7F3vkawQDYk8A2_hdNZuXRDxgQeYJuX7nONjsQZ0">
+
+    <title>Roman Vorobyov</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-41765277-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="page-container" class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <header id="page-header">
+                <div class="header-top clearfix">
+                    <img src="{{ url_for('static', filename='avatar.jpg') }}" class="img-rounded">
+                    <div class="header-title">
+                        <div class="header-name">
+                            Roman<br/>Vorobyov
+                        </div>
+                        <div class="header-description">
+                            Full-Stack<br/>Web Developer
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <nav role="navigation">
+                        <ul class="nav nav-stacked">
+                            <li class="{% if is_nav_about_active %}active{% endif %}">
+                                <a href="{{ url_for('about') }}">About</a>
+                            </li>
+                            <li class="{% if is_nav_contact_active %}active{% endif %}">
+                                <a href="{{ url_for('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="col-sm-8">
+            <article id="page-content">
+                {% block content %}{% endblock %}
+            </article>
+        </div>
+    </div>
+</div>
+</body>
+</html>
