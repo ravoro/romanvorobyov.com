@@ -3,4 +3,5 @@ __pycache__/
 venv/
 .idea/
 tmp/
+scripts/deploy*.sh
 yandex_*.txt
