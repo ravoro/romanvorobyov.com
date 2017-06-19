@@ -65,6 +65,18 @@ body {
     margin-top: 0;
 }
 
+article#page-content header,
+article#page-content footer {
+    font-style: italic;
+    margin: 25px 20px;
+}
+
+article#page-content footer {
+    border-top: 1px solid #ccc;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
 /*
  * Desktop customizations
  */
@@ -100,6 +112,15 @@ body {
 /*
  * Bootstrap customizations
  */
+blockquote {
+    border: none;
+    background: #e3e3e3;
+    font-size: 14px;
+    font-style: italic;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 dl.dl-horizontal dt {
     width: 100px;
 }
