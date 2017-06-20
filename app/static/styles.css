@@ -65,13 +65,13 @@ body {
     margin-top: 0;
 }
 
-article#page-content header,
-article#page-content footer {
+#page-content #article-header,
+#page-content #article-footer {
     font-style: italic;
     margin: 25px 20px;
 }
 
-article#page-content footer {
+#page-content #article-footer {
     border-top: 1px solid #ccc;
     margin-top: 40px;
     padding-top: 20px;
