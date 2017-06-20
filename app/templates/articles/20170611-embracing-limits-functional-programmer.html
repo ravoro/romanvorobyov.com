@@ -1,0 +1,222 @@
+{% extends "blog_article.html" %}
+
+{% block article_title %}Embracing Limits as a (Functional) Programmer{% endblock %}
+
+{% block article_body %}
+    <header id="article-header">
+        <p>
+            Thoughts on
+            <a href="https://medium.com/@cscalfani/why-programmers-need-limits-3d96e1a0a6db" target="_blank">
+                Why Programmers Need Limits
+            </a>
+            by Charles Scalfani.
+        </p>
+    </header>
+
+    <p>
+        Charles makes an argument that as programmers we need to embrace limitations in a field where nearly anything is possible.
+    </p>
+
+    <p>
+        With great power comes great responsibility and often times software issues arise precisely out of programmers
+        <i>mishandling</i> a language's powerful capabilities <i>(global mutable state, anyone?)</i>.
+    </p>
+
+    <blockquote>
+        <p>
+            It’s the lack of limits that makes writing and maintaining software so difficult.
+        </p>
+    </blockquote>
+
+    <p>
+        Functional languages in particular provide certain limitations
+        that ultimately encourage better coding practices <i>(e.g. immutability)</i>.
+    </p>
+
+    <p>
+        As programmers we need to learn from common pitfalls and set <i>(and embrace!)</i> limits
+        to keep ourselves from running into similar problems in the future.
+    </p>
+    <p>
+        The <i><a href="https://en.wikipedia.org/wiki/Goto" target="_blank">GOTO</a></i> statement
+        is a classic example of a limitation imposed on programmers <i>(by programmers!)</i> for a greater good.
+    </p>
+    <p>
+        Though powerful, the hard-to-follow <i>Spaghetti code</i> that often resulted from GOTO's use
+        led to it being banned from most languages for the sake of code readability.
+    </p>
+
+    <blockquote>
+        <p>
+            What the progressive minds realized is that <b>code is read more than it’s written or changed</b>.
+            So it may be a little less convenient for a small group of feet-draggers
+            but in the long run we’d be far better off with this limitation.
+        </p>
+        <p>
+            Computers can still do <i>GOTO</i>s. In fact, they need to.
+            It’s just that we, as an industry, decided to limit programmers from <b>directly</b> using them.
+            All computer languages compile to code that uses <i>GOTO</i>s.
+            But language designers created constructs that employed more disciplined branching,
+            e.g. using a <i>break</i> statement to exit a <i>for</i> loop.
+        </p>
+    </blockquote>
+
+    <p>
+        Charles highlights common problems programmers currently face
+        <i>(i.e. the <b>GOTOs of today</b>)</i> and what solutions are offered by functional languages:
+    </p>
+    <blockquote>
+        <ul>
+            <li>Complexity</li>
+            <li>Reusability</li>
+            <li>Global Mutable State</li>
+            <li>Dynamic Typing</li>
+            <li>Testing</li>
+            <li>The Demise of Moore's Law</li>
+        </ul>
+    </blockquote>
+
+    <h4>Complexity</h4>
+    <p>
+        Writing code that is decomposed helps reduce the inevitable complexity that occurs as programs grow over time.
+    </p>
+    <p>
+        Functional languages encourages decomposing a problem into a collection of manageable self-contained functions.
+    </p>
+    <blockquote>
+        <p>
+            Limiting programmers to only pure functions greatly limits complexity since
+            functions can only have a local effect and helps developers naturally decompose their solutions.
+        </p>
+    </blockquote>
+
+    <h4>Reusability</h4>
+    <p>
+        Developers often rely on copy/paste/modify <i>(though few will admit it!)</i>
+        when coding similar bits of functionality.
+    </p>
+    <p>
+        Functional languages have constructs that make reusing code easier and more practical
+        <i>(e.g. Higher-order Functions, Currying, Function Composition)</i>.
+    </p>
+    <blockquote>
+        <p>
+            ... while we cannot eliminate copypasta, we can make it unnecessary through language support ...
+        </p>
+    </blockquote>
+
+    <h4>Global Mutable State</h4>
+    <p>
+        Mutable state makes it harder to reason about and debug programs.
+    </p>
+    <p>
+        Functional languages encourage the use of immutable variables to avoid mutability issues altogether.
+    </p>
+    <blockquote>
+        <p>
+            Proper management of state is the most important thing you can do in your program to ensure reliability.
+            Functional Programming solves this problem by placing limits on programmers at the language level.
+            Programmers cannot create mutable variables.
+        </p>
+        <p>
+            ... when side-effects must happen, Functional Languages have ways of containing potentially dangerous parts of your program.
+            ... these parts of the code are clearly marked as dangerous and segregated from the pure code.
+            This gives the programmer a fighting chance to find [and fix] ... bugs since the dangerous parts are corralled.
+        </p>
+    </blockquote>
+
+    <h4>Dynamic Typing</h4>
+    <p>
+        Static and Dynamic Typing both have their advantages and disadvantages.
+    </p>
+    <p>
+        Static Typing can be too verbose while Dynamic Typing can increase the likelihood of runtime errors.
+    </p>
+    <p>
+        Functional languages typically support <i>Type Inference</i> which gives the best of both.
+    </p>
+    <blockquote>
+        <p>
+            Many Functional Programming languages support <i>Type Inference</i>
+            where the compiler can infer the types of functions you’re writing by the way you use them.
+            This means we can have Static Typing without all of the overhead of specifying.
+        </p>
+        <p>
+            So by limiting programmers to good Static Typing, the compiler can actually help detect bugs, infer types
+            and aid in coding instead of burdening the developer with verbose, intrusive, type information.
+        </p>
+    </blockquote>
+
+    <h4>Testing</h4>
+    <p>
+        Testing can be hard and time consuming.
+    </p>
+    <p>
+        Functional language encourage the use of pure functions, which are easier to test because they are
+        self-contained units with no side-effects and always produce the same result for the same input.
+    </p>
+    <blockquote>
+        <p>
+            ... if we limit the code to be Pure Functions, then
+            ... [we'll] have our dangerous code layer as a very thin interface layer leaving the majority of the module as pure
+            ... [. And] testing pure functions is far easier.
+        </p>
+    </blockquote>
+
+    <h4>The Demise of Moore’s Law</h4>
+    <p>
+        Current CPU technologies are reaching a performance limit
+        and the best way to increase speed is to use more cores.
+    </p>
+    <p>
+        To utilize more cores, programs need to be sliced into parallel parts, which is not an easy task.
+    </p>
+    <p>
+        Functional languages encourage the use of immutability and pure functions,
+        which make it easier to write and execute parallel code.
+    </p>
+    <blockquote>
+        <p>
+            ... with Pure Functions, it doesn't matter what order they are run.
+            All that matters is that the inputs are available.
+            This means that the compiler or runtime system can determine which functions to run and when.
+        </p>
+        <p>
+            By limiting functions to pure functions, it frees the programmer up from having to worry about parallelism.
+        </p>
+    </blockquote>
+
+    <h4>Conclusion</h4>
+    <p>
+        Embrace the limitations imposed by functional languages.
+    </p>
+    <p>
+        Understand why the limitations are needed.
+    </p>
+    <p>
+        There's a reason why they're there.
+    </p>
+
+
+    <footer id="article-footer">
+        <p>
+            <b>P.S.</b>
+            The idea that <b>limitations can be good</b> is nothing new and not just related to programming...
+        </p>
+        <ul>
+            <li>
+                <a href="https://en.wikipedia.org/wiki/The_Paradox_of_Choice" target="_blank">
+                    The Paradox of Choice - Why More Is Less
+                </a>
+                by Barry Schwartz
+                (<a href="https://www.youtube.com/watch?v=VO6XEQIsCoM" target="_blank">video</a>)
+            </li>
+            <li>
+                <a href="https://gettingreal.37signals.com/ch03_Embrace_Constraints.php" target="_blank">
+                    Embrace Constraints
+                </a>
+                by 37signals
+            </li>
+        </ul>
+    </footer>
+{% endblock %}
