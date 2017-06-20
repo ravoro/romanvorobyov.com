@@ -1,0 +1,142 @@
+{% extends "blog_article.html" %}
+
+{% block article_title %}Python: Dunder Methods{% endblock %}
+
+{% block article_body %}
+    <header id="article-header">
+        <p>
+            Brief on Python's
+            <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names" target="_blank">
+                dunder
+            </a>
+            methods.
+        </p>
+    </header>
+
+    <p>
+        <i>Dunder</i> methods are "special" methods
+        <i>predefined</i> by the Python language to allow for <i>operator overloading</i>.
+    </p>
+    <p>
+        They are opt-in hooks, enabling developers to write custom classes that can be operated on
+        using standard language features <i>(e.g. arithmetic operators, iteration, slicing)</i>.
+    </p>
+    <blockquote>
+        <p>
+            ... defining methods with special names [i.e. dunders] ... is Python’s approach to operator overloading,
+            allowing classes to define their own behavior with respect to language operators.
+        </p>
+        <footer>
+            <cite>
+                <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names" target="_blank">
+                    Python Documentation
+                </a>
+            </cite>
+        </footer>
+    </blockquote>
+
+    <p>
+        Never create your own dunder methods. There should be no reason to.
+    </p>
+    <p>
+        They are hooks into Python core <i>(as defined by Python core)</i>.
+    </p>
+    <blockquote>
+        <p>
+            The dunder convention is a namespace reserved for the core Python team to implement their own protocols.
+            Never use the namespace for your own, library-specific things!
+            This defeats the whole purpose.
+        </p>
+        <footer>
+            <cite>
+                <a href="http://www.pixelmonkey.org/2013/04/11/python-double-under-double-wonder" target="_blank">
+                    Python double-under, double-wonder
+                </a>
+            </cite>
+        </footer>
+    </blockquote>
+
+    <p>
+        It helps to understand that Python operators as we know them are actually
+        <i>syntax sugar</i> for underlying dunder methods.
+    </p>
+    <table class="table">
+        <caption>Examples of Python operators and their ultimate translations.</caption>
+        <thead>
+        <tr>
+            <td>Syntax Sugar</td>
+            <td>Translation</td>
+        </tr>
+        </thead>
+        <tr>
+            <td><code>a + b</code></td>
+            <td><code>a.__add__(b)</code></td>
+        </tr>
+        <tr>
+            <td><code>a == b</code></td>
+            <td><code>a.__eq__(b)</code></td>
+        </tr>
+        <tr>
+            <td><code>a[b]</code></td>
+            <td><code>a.__getitem__(b)</code></td>
+        </tr>
+        <tr>
+            <td><code>a in b</code></td>
+            <td><code>a.__contains__(b)</code></td>
+        </tr>
+        <tr>
+            <td><code>len(a)</code></td>
+            <td><code>a.__len__()</code></td>
+        </tr>
+    </table>
+
+    <p>
+        To make a custom class usable by an operator, simply implement the respective dunder method.
+    </p>
+<pre><code>class SomethingCustom:
+    def __add__(self, other):
+        # Do any custom logic for '+' operator.
+        # For example:
+        return  'I just added something'
+sum = SomethingCustom() + 'hello'
+sum == 'I just added something'  # True</code>
+</pre>
+    <h4>Conclusion</h4>
+    <p>
+        Dunder methods bring a native feel to custom classes.
+    </p>
+    <p>
+        They hook into Python core allowing a custom class to be operated on using standard language features.
+    </p>
+
+
+    <footer id="article-footer">
+        <p>
+            <b>P.S.</b>
+        </p>
+        <p>
+            For a more detailed intro into dunder methods:
+        </p>
+        <ul>
+            <li>
+                <a href="https://dbader.org/blog/python-dunder-methods" target="_blank">
+                    Enriching Your Python Classes With Dunder (Magic, Special) Methods
+                </a>
+                by Bob Belderbos.
+            </li>
+        </ul>
+        <p>
+            For more technical details on dunder methods:
+        </p>
+        <ul>
+            <li>
+
+                <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names" target="_blank">
+                    Data Model - Special Method Names
+                </a>
+                section of Python documentation.
+            </li>
+        </ul>
+    </footer>
+
+{% endblock %}
