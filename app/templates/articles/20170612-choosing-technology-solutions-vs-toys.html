@@ -1,0 +1,91 @@
+{% extends "blog_article.html" %}
+
+{% block article_title %}Choosing a Technology: Solutions vs. Toys{% endblock %}
+
+{% block article_body %}
+    <header id="article-header">
+        <p>
+            Thoughts on
+            <a href="https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb" target="_blank">
+                You Are Not Google
+            </a>
+            by Ozan Onay.
+        </p>
+    </header>
+
+    <p>
+        When choosing technologies, programmers need be wary that they focus on
+        choosing the best tool to solve the problem, and not the "coolest" or the "newest" toy to play with.
+    </p>
+    <blockquote>
+        <p>
+            Your goal should be to "solve" the problem mostly within the problem domain, not the solution domain.
+        </p>
+    </blockquote>
+
+    <p>
+        Too often a technology is chosen because the bigger companies <i>(e.g. Google)</i> are using it.
+    </p>
+    <blockquote>
+        <p>
+            ... if you’re using a technology that originated at a large company, but your use case is very different,
+            it’s unlikely that you arrived there deliberately; no, it’s more likely you got there
+            through a ritualistic belief that imitating the giants would bring the same riches.
+        </p>
+    </blockquote>
+
+    <p>
+        All aspects of a technology needs to be considered and not just the selling points.
+        There are always trade-offs, but they are discussed far less often than the benefits.
+    </p>
+    <blockquote>
+        <p>
+            Determine what was de-prioritized to achieve what was prioritized.
+        </p>
+    </blockquote>
+
+    <blockquote>
+        <p>
+            Even Google isn't Google ... What’s important is that you actually use the right tool for the job.
+            Google knows this well: once they decided that MapReduce wasn’t the right tool for building the index, they stopped using it.
+        </p>
+    </blockquote>
+
+
+    <p>
+        Ozan proposes the acronym <b>UNPHAT</b>
+        as an aid for ensuring that a technology is being chosen for the right reasons:
+    </p>
+    <ul>
+        <li>
+            <u><i><b>U</b>nderstand</i></u> the problem before considering solutions.
+        </li>
+        <li>
+            <u><i>e<b>N</b>umerate</i></u> multiple candidate solutions for consideration, to avoid playing favorites.
+        </li>
+        <li>
+            <u><i><b>P</b>aper</i></u> i.e. read each candidate's paper/documentation to understand
+            <i>what it was designed for</i>.
+        </li>
+        <li>
+            <u><i><b>H</b>istorical context</i></u> in which the candidate was designed is important for understanding
+            <i>why it was created</i>.
+        </li>
+        <li>
+            <u><i><b>A</b>dvantages and disadvantages</i></u> need to be weighed against each other.
+        </li>
+        <li>
+            <i><u><b>T</b>hink</u> (and really think!)</i> about how well each candidate solution fits the problem at hand.
+            <i>Understand what would need to be different for you to change your mind.</i>
+        </li>
+    </ul>
+    </p>
+
+    <h4>Conclusion</h4>
+    <p>
+        Ensure that you're prioritizing solutions over toys when choosing a technology.
+    </p>
+    <p>
+        Use Ozan's <b>UNPHAT</b> acronym to double check yourself during the decision process.
+    </p>
+{% endblock %}
