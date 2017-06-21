@@ -129,6 +129,17 @@ dl.dl-horizontal dd {
     margin-left: 120px;
 }
 
+pre {
+    border: 0;
+    margin-left: 10px;
+}
+
+pre, code {
+    background: transparent;
+    color: inherit;
+    font-style: italic;
+}
+
 @media (min-width: 768px) {
     .container {
         max-width: 750px;
