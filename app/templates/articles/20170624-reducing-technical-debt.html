@@ -1,0 +1,51 @@
+{% extends "blog_article.html" %}
+
+{% block article_title %}Reducing Technical Debt{% endblock %}
+
+{% block article_body %}
+    <header id="article-header">
+        <p>
+            This article is my thoughts on
+            <a href="https://blog.ndepend.com/the-one-thing-every-company-can-do-to-reduce-technical-debt" target="_blank">
+                The One Thing Every Company Can Do to Reduce Technical Debt
+            </a>
+            by Erik Dietrich.
+        </p>
+    </header>
+
+    <p>
+        Tech debt is something everybody has but few want to deal with, especially when there are other business priorities at stake.
+    </p>
+    <p>
+        As a result, tech debt builds up and is usually not addressed until after it is too late and damage is done <i>forcing</i> a solution to be put in place.
+    </p>
+    <p>
+        Often times the reason that tech debt grows is that people simply don't know how big it actually is. <i>It is abstract.</i>
+    </p>
+    <p>
+        And it is hard to solve a problem when it is not clear what the problem is in the first place.
+    </p>
+    <p>
+        Erik suggests precisely that, the first step in reducing technical debt should be transforming it from something abstract to something measurable.
+    </p>
+    <blockquote>
+        <p>
+            ... fight tech debt by <b>visibly measuring</b> it.
+        </p>
+        <p>
+            Just go put a figure to it so that you can <b>watch that figure change</b> as you do your work
+        </p>
+    </blockquote>
+    <p>
+        Once the tech debt is measurable, it becomes more visible and will be less likely to grow too big without notice.
+    </p>
+    <blockquote>
+        <p>
+            If you wring your hands over the particulars, your tech debt will remain <b>forever unquantified</b> and thus abstract.
+        </p>
+        <p>
+            But if you write up on the big board that you have 225 days of tech debt when yesterday’s figure had only 200,
+            people are going to notice. Discussions will start. Suddenly, the tech debt becomes everyone’s problem.
+        </p>
+    </blockquote>
+{% endblock %}
