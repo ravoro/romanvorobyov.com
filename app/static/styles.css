@@ -79,11 +79,11 @@ body {
     padding-top: 20px;
 }
 
-#page-id-blog-index ul {
+#page-id-blog-index #page-content ul {
     margin-top: 20px;
 }
 
-#page-id-blog-index ul li {
+#page-id-blog-index #page-content ul li {
     margin: 10px 0;
 }
 
