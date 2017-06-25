@@ -1,3 +1,7 @@
+* {
+    transition: 0.25s;
+}
+
 body {
     font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #eee;
@@ -50,7 +54,6 @@ body {
     color: #888;
     padding: 10px 25px;
     text-align: left;
-    transition: 0.25s;
 }
 
 #page-header .nav li a:focus,
@@ -58,7 +61,6 @@ body {
     background-color: transparent;
     color: #555;
     font-weight: bold;
-    transition: 0.25s;
 }
 
 #page-content h1 {
@@ -75,6 +77,14 @@ body {
     border-top: 1px solid #ccc;
     margin-top: 40px;
     padding-top: 20px;
+}
+
+#page-id-blog-index ul {
+    margin-top: 20px;
+}
+
+#page-id-blog-index ul li {
+    margin: 10px 0;
 }
 
 /*
