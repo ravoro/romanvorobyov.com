@@ -14,7 +14,7 @@ app.url_map.strict_slashes = False
 
 @app.route("/")
 def home():
-    return redirect(url_for('about'))
+    return redirect(url_for('blog_index'))
 
 
 @app.route("/about")
