@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.1
+- modify layout to be more left-centered
+
 ## 2.1
 - add a blog section
 - improve responsive styles
