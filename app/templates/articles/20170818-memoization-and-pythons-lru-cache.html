@@ -1,0 +1,83 @@
+{% extends "blog_article.html" %}
+
+{% block article_title %}Memoization (and Python's lru_cache){% endblock %}
+
+{% block article_body %}
+    <header id="article-header">
+        <p>
+            This article is a brief on memoization and how it can be achieved using Python's
+            <a href="https://docs.python.org/3/library/functools.html#functools.lru_cache" target="_blank">
+                lru_cache
+            </a>
+            decorator.
+        </p>
+    </header>
+
+    <p>
+        Memoization is an optimization technique that caches a function's results based on input value.
+    </p>
+    <p>
+        Given an initially unique input the result is calculated and cached,
+        such that any subsequent calls with the same input return the initial cached result
+        (instead of performing a recalculation).
+    </p>
+    <p>
+        Memoization is a <i>time-memory tradeoff</i>
+        (i.e. subsequent computation time is saved at the cost of keeping initial calculated results in memory)
+    </p>
+    <p>
+        Memoization is useful for pure functions (that always return the same result for the same input),
+        whose results can be cached without a concern that they may be out of date.
+    </p>
+    <p>
+        Python 3.2+ provides an simple memoization solution in the form of the
+        <a href="https://docs.python.org/3/library/functools.html#functools.lru_cache" target="_blank">
+            lru_cache
+        </a>
+        decorator.
+    </p>
+    <p>
+        For example, a memoized solution for computing the Fibonacci sequence simply requires the addition of the @lru_cache decorator.
+    </p>
+<pre><code>@lru_cache()
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-2) + fib(n-1)</code>
+</pre>
+
+    <footer id="article-footer">
+        <p>
+            <b>P.S.</b>
+        </p>
+        <p>
+            For more details on memoization:
+        </p>
+        <ul>
+            <li>
+                <a href="https://mike.place/2016/memoization/" target="_blank">
+                    Memoization in Python
+                </a>
+                by Mike Lee Williams.
+            </li>
+            <li>
+                <a href="https://habrahabr.ru/post/335866/" target="_blank">
+                    Мемоизация и каррирование (Python)
+                </a>
+                by German Gorelkin.
+            </li>
+        </ul>
+        <p>
+            For more details on Python's lru_cache decorator:
+        </p>
+        <ul>
+            <li>
+                <a href="https://docs.python.org/3/library/functools.html#functools.lru_cache" target="_blank">
+                    lru_cache
+                </a>
+                section of Python documentation.
+            </li>
+        </ul>
+    </footer>
+
+{% endblock %}
