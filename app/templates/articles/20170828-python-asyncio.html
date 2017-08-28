@@ -1,0 +1,12 @@
+{% extends "blog_article.html" %}
+
+{% block article_title %}Python's Asyncio{% endblock %}
+
+{% block article_body %}
+    - asyncio enables single-threaded concurrency
+        - as opposed to (a conceptually more intuitive) multi-threaded concurrency
+    - single-threaded concurrency is achieved using an event loop
+        - event loop is also how javascript works???
+    - event loop works with callback functions that are given to it, and it executes them in some order
+        - it is essentially an infinite "while true" loop that executes whatever callback functions are given to it???
+{% endblock %}
