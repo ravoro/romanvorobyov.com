@@ -2,12 +2,12 @@ import os
 from typing import Dict
 
 from flask import abort, Flask, redirect, render_template, request, url_for
-from jinja2.exceptions import TemplateNotFound
 
 from .config import Config as app_config
 from .utils import slug_regex
+from .utils.markdown import read_markdown_file
 
-app = Flask(__name__, template_folder=app_config.TEMPLATES_DIR)
+app = Flask(__name__)
 app.config.from_object(app_config)
 app.url_map.strict_slashes = False
 
@@ -29,10 +29,7 @@ def contact():
 
 @app.route("/blog")
 def blog_index():
-    articles_path = os.path.join(app.config['BASE_DIR'],
-                                 app.config['APP_DIR'],
-                                 app.config['TEMPLATES_DIR'],
-                                 app.config['ARTICLES_DIR'])
+    articles_path = os.path.join(app.config['ARTICLES_DIR'])
     basenames_unsorted = os.listdir(articles_path)
     basenames = sorted(basenames_unsorted, reverse=True)
     articles = [_article_meta(basename) for basename in basenames]
@@ -41,16 +38,12 @@ def blog_index():
 
 def _article_meta(basename: str) -> Dict[str, str]:
     """Return meta information about the article identified by `basename`."""
-    template_path = os.path.join(app.config['ARTICLES_DIR'], basename)
-    title = render_template(template_path,
-                            hide_base=True,
-                            hide_title=False,
-                            hide_body=True)
+    path = os.path.join(app.config['ARTICLES_DIR'], basename)
+    _, meta = read_markdown_file(path)
     slug = os.path.splitext(basename)[0]
-    url = '/blog/{}'.format(slug)
     return {
-        'title': title,
-        'url': url
+        'title': meta.get('title'),
+        'url': '/blog/{}'.format(slug)
     }
 
 
@@ -59,8 +52,10 @@ def blog_article(article: str):
     if not slug_regex.match(article):
         abort(400)
     try:
-        return render_template('articles/{}.html'.format(article))
-    except TemplateNotFound:
+        path = os.path.join(app.config['ARTICLES_DIR'], article + '.md')
+        html, meta = read_markdown_file(path)
+        return render_template('blog_article.html', body=html, **meta)
+    except FileNotFoundError:
         abort(404)
 
 

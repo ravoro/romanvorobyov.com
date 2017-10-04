@@ -1,5 +1,5 @@
 Source files for my [personal](http://romanvorobyov.com) website.
 
-This is primarily a static site.
+The site uses a Flask backend.
 
-Uses Flask backend for some bonus functionality (ex: routing, Jinja templates)
+Pages are Jinja-based and blog articles are Markdown-based (and auto-converted to HTML).
