@@ -9,7 +9,7 @@
     <meta name="author" content="Roman Vorobyov">
     <meta name="google-site-verification" content="4me7F3vkawQDYk8A2_hdNZuXRDxgQeYJuX7nONjsQZ0">
 
-    <title>Roman Vorobyov</title>
+    <title>{{ title }} | Roman Vorobyov</title>
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -58,7 +58,10 @@
         </div>
         <div class="col-sm-8">
             <article id="page-content">
-                {% block content %}{% endblock %}
+                <h1>{{ title }}</h1>
+                {% block content %}
+                    {{ body | safe }}
+                {% endblock %}
             </article>
         </div>
     </div>

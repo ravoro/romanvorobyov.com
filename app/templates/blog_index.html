@@ -2,10 +2,11 @@
 
 {% set is_nav_blog_active = True %}
 
+{% set title = 'Blog' %}
+
 {% block body_id %}page-id-blog-index{% endblock %}
 
 {% block content %}
-    <h1>Blog</h1>
     <p><i>My thoughts and knowledge base related to software development.</i></p>
     <ul class="list-unstyled">
         {% for article in articles %}
