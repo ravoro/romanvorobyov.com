@@ -1,5 +1,6 @@
-{% if hide_base -%}
-    {% extends "blog_article_baseless.html" %}
-{%- else -%}
-    {% extends "blog_article_base.html" %}
-{%- endif %}
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    {{ body | safe }}
+{% endblock %}
