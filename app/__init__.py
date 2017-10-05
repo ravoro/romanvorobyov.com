@@ -54,7 +54,7 @@ def blog_article(article: str):
     try:
         path = os.path.join(app.config['ARTICLES_DIR'], article + '.md')
         html, meta = read_markdown_file(path)
-        return render_template('blog_article.html', body=html, **meta)
+        return render_template('base.html', body=html, **meta)
     except FileNotFoundError:
         abort(404)
 
