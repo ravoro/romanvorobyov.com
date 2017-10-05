@@ -7,7 +7,7 @@ md = Markdown(extensions=['markdown.extensions.extra', 'markdown.extensions.meta
 
 def read_markdown_file(path: str) -> Tuple[str, Dict]:
     """Read markdown file identified by `path` and return the converted html and meta."""
-    with open(path) as f:
+    with open(path, encoding='utf-8') as f:
         text = f.read()
     html_raw = md.convert(text)
     html = _convert_html(html_raw)
