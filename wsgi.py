@@ -13,4 +13,4 @@ sys.path.insert(0, BASE_DIR)
 
 # create application
 from app import create_app
-application = create_app('config.ProdConfig')
+application = create_app('app.config.ProdConfig')
