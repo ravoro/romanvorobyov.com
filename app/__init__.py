@@ -1,7 +1,8 @@
 import os
 from typing import Dict
 
-from flask import abort, Flask, redirect, render_template, request, url_for
+from flask import abort, Flask, redirect, render_template, request, url_for, Response
+from werkzeug.exceptions import HTTPException, HTTP_STATUS_CODES
 
 from .config import Config as app_config
 from .utils import slug_regex
@@ -65,3 +66,14 @@ def remove_trailing_slash():
     path = request.path
     if path != '/' and path.endswith('/'):
         return redirect(path.rstrip('/'))
+
+
+for code in HTTP_STATUS_CODES:
+    try:
+        def handle_error(e: HTTPException) -> Response:
+            return render_template('error.html', code=e.code, description=e.description)
+
+
+        app.register_error_handler(code, handle_error)
+    except KeyError:
+        pass  # ignore rare exceptions that flask does not provide default handlers for
