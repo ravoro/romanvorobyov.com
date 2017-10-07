@@ -7,4 +7,4 @@ app.config.from_object(app_config)
 
 from . import _handle_errors
 from . import _url_trailing_slash
-from . import routes
+from . import controllers
