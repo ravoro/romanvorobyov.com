@@ -8,7 +8,7 @@ from werkzeug.http import HTTP_STATUS_CODES
 # Use this function to add new app functionality, due to difficulties doing the same with Blueprints
 def app_handle_errors(app: Flask) -> Flask:
     def handle_error(e: HTTPException) -> Response:
-        return render_template('error.html', code=e.code, description=e.description)
+        return render_template('error.html', code=e.code, description=e.description), e.code
 
     for code in HTTP_STATUS_CODES:
         try:
