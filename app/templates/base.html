@@ -43,13 +43,13 @@
                     <nav role="navigation">
                         <ul class="nav nav-stacked">
                             <li class="{% if is_nav_blog_active %}active{% endif %}">
-                                <a href="{{ url_for('blog_index') }}">Blog</a>
+                                <a href="{{ url_for('controllers.blog_index') }}">Blog</a>
                             </li>
                             <li class="{% if is_nav_about_active %}active{% endif %}">
-                                <a href="{{ url_for('about') }}">About</a>
+                                <a href="{{ url_for('controllers.about') }}">About</a>
                             </li>
                             <li class="{% if is_nav_contact_active %}active{% endif %}">
-                                <a href="{{ url_for('contact') }}">Contact</a>
+                                <a href="{{ url_for('controllers.contact') }}">Contact</a>
                             </li>
                         </ul>
                     </nav>

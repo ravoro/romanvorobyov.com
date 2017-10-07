@@ -12,4 +12,5 @@ with open(activate_this) as file_:
 sys.path.insert(0, BASE_DIR)
 
 # create application
-from app import app as application
+from app import create_app
+application = create_app('config.ProdConfig')
