@@ -8,9 +8,13 @@
 
 {% block content %}
     <p><i>My thoughts and knowledge base related to software development.</i></p>
-    <ul class="list-unstyled">
-        {% for article in articles %}
-            <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-        {% endfor %}
-    </ul>
+    {% if not articles %}
+        No articles found.
+    {% else %}
+        <ul class="list-unstyled">
+            {% for article in articles %}
+                <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}
