@@ -1,7 +1,6 @@
 from werkzeug.exceptions import abort
 
-from tests import BaseCase
-from tests.utils import response_html
+from tests import BaseCase, response_html
 
 
 class Test(BaseCase):

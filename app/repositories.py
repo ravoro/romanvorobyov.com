@@ -4,6 +4,7 @@ from typing import Optional, List
 
 from flask import current_app
 
+from .utils import list_without_nones
 from .utils.markdown import read_markdown_file
 
 Article = namedtuple('Article', 'title, url, body')
@@ -12,10 +13,10 @@ Article = namedtuple('Article', 'title, url, body')
 class ArticleRepo:
     @staticmethod
     def all() -> List[Article]:
-        """Return all articles, sorted in reverse chronological order."""
+        """Return all articles, sorted in reverse alphanumeric order."""
         basenames_unsorted = os.listdir(current_app.config['ARTICLES_DIR'])
         basenames = sorted(basenames_unsorted, reverse=True)
-        return [ArticleRepo.get(b) for b in basenames]
+        return list_without_nones([ArticleRepo.get(b) for b in basenames])
 
     @staticmethod
     def get(basename: str) -> Optional[Article]:
