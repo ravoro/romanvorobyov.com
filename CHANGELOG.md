@@ -1,17 +1,23 @@
 # Changelog
 
+## 2.2
+- Use Markdown instead of Jinja for blog articles
+- Add custom error pages
+- Add tests
+- Add mypy
+
 ## 2.1.1
-- modify layout to be more left-centered
+- Modify layout to be more left-centered
 
 ## 2.1
-- add a blog section
-- improve responsive styles
-- deploy script
+- Add a blog section
+- Improve responsive styles
+- Deploy script
 
 ## 2.0
-- a primarily static site, with basic info (about me, contact info)
-- minimal use of Flask, primarily for routing and jinja templates
+- A primarily static site, with basic info (about me, contact info)
+- Minimal use of Flask, primarily for routing and jinja templates
 
 ## 1.0
-- a basic PHP one-page "businesscard" website
-- based on designs by Andreas Viklund (http://andreasviklund.com/templates/basic-businesscard)
+- A basic PHP one-page "businesscard" website
+- Based on designs by Andreas Viklund (http://andreasviklund.com/templates/basic-businesscard)
