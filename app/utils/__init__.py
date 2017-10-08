@@ -1,11 +1,12 @@
-import re
 from typing import List, Optional, TypeVar
+
+import re
 
 slug_regex = re.compile(r'^[a-zA-Z0-9-]{1,64}$')
 
 T = TypeVar('T')
 
 
-def list_without_nones(l: List[Optional[T]]) -> List[T]:
+def list_without_nones(lst: List[Optional[T]]) -> List[T]:
     """Return a list without any None values."""
-    return list(filter(lambda x: x is not None, l))
+    return [i for i in lst if i is not None]
