@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ravoro/romanvorobyov.com.svg?branch=master)](https://travis-ci.org/ravoro/romanvorobyov.com)
+
 Source files for my [personal](http://romanvorobyov.com) website.
 
 The site uses a Flask backend.
