@@ -1,6 +1,7 @@
 # RomanVorobyov.com
 
 [![Build Status](https://travis-ci.org/ravoro/romanvorobyov.com.svg?branch=master)](https://travis-ci.org/ravoro/romanvorobyov.com)
+[![BCH compliance](https://bettercodehub.com/edge/badge/ravoro/romanvorobyov.com?branch=master)](https://bettercodehub.com/)
 
 Source files for my [personal](http://romanvorobyov.com) website.
 
