@@ -1,6 +1,7 @@
 # RomanVorobyov.com
 
 [![Build Status](https://travis-ci.org/ravoro/romanvorobyov.com.svg?branch=master)](https://travis-ci.org/ravoro/romanvorobyov.com)
+[![Coverage Status](https://coveralls.io/repos/github/ravoro/romanvorobyov.com/badge.svg?branch=master)](https://coveralls.io/github/ravoro/romanvorobyov.com?branch=master)
 [![BCH compliance](https://bettercodehub.com/edge/badge/ravoro/romanvorobyov.com?branch=master)](https://bettercodehub.com/)
 
 Source files for my [personal](http://romanvorobyov.com) website.
