@@ -5,16 +5,20 @@
 {% set title = 'About' %}
 
 {% block content %}
-    <p>Hey, I'm Roman.</p>
-    <p>I'm an Full-Stack Web Developer <em>(with a Back-End focus - Python, Scala)</em>.</p>
+    <p>Hey, I&apos;m Roman.</p>
+    <p>I&apos;m a Full-Stack Web Developer <em>(specializing in Back-End &mdash; Python, Scala)</em>.</p>
     <p>A little bit about me:</p>
     <dl class="dl-horizontal">
         <dt>Hobbies:</dt>
-        <dd>History, Photography, Cycling, Football/Soccer, Basketball</dd>
+        <dd>History, Photography, Cycling, Soccer, Basketball</dd>
         <dt>Languages:</dt>
-        <dd><em>Native - </em>English, Russian</dd>
-        <dd><em>Basic - </em>Polish, German</dd>
+        <dd>English, Russian <em>(Native)</em></dd>
+        <dd>Polish, German <em>(Basic)</em></dd>
     </dl>
+    <p>
+        My professional accomplishments are detailed in
+        <a href="{{ url_for('static', filename='RomanVorobyovResume.pdf') }}" target="_blank">my resume</a>.
+    </p>
     <p>
         You can find me on:
         <a href="https://linkedin.com/in/romanvorobyov" target="_blank">LinkedIn</a>,
