@@ -48,6 +48,9 @@
                             <li class="{% if is_nav_about_active %}active{% endif %}">
                                 <a href="{{ url_for('controllers.about') }}">About</a>
                             </li>
+                            <li>
+                                <a href="{{ url_for('static', filename='RomanVorobyovResume.pdf') }}" target="_blank">Resume</a>
+                            </li>
                             <li class="{% if is_nav_contact_active %}active{% endif %}">
                                 <a href="{{ url_for('controllers.contact') }}">Contact</a>
                             </li>
