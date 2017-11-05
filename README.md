@@ -18,4 +18,4 @@ Pages are Jinja-based and blog articles are Markdown-based (and auto-converted t
 
 ## Tests
 - Run test suite `./scripts/test.sh`
-- Run test suite and view coverage report `./scripts/test_coverage`
+- Run test suite and view coverage report `./scripts/test_coverage.sh`

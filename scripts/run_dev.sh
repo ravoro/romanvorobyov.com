@@ -7,6 +7,6 @@ if [ ! -d venv ]; then
 fi
 
 source venv/bin/activate
-export FLASK_APP="wsgi_dev"
+export FLASK_APP="wsgi_dev.py"
 export FLASK_DEBUG=1
 flask run

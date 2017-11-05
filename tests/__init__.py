@@ -3,7 +3,8 @@ from unittest import TestCase
 from bs4 import BeautifulSoup
 from flask import Response
 
-from app import create_app, config
+import config
+from app import create_app
 
 
 class BaseCase(TestCase):
