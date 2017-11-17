@@ -18,6 +18,8 @@ class ProdConfig(BaseConfig):
 
 class DevConfig(BaseConfig):
     DEBUG = True
+    PROFILE = False
+    PROFILE_RESTRICTIONS = [10]
 
 
 class TestConfig(BaseConfig):
