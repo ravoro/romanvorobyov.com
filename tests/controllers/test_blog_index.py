@@ -1,10 +1,15 @@
 from unittest.mock import patch, Mock
 
+from app.controllers import blog_index
 from app.repositories import ArticleRepo, Article
 from tests import BaseCase, response_html
 
 
 class Test(BaseCase):
+    def setUp(self):
+        super().setUp()
+        blog_index.cache_clear()
+
     @patch.object(ArticleRepo, 'all')
     def test_ok(self, mock_all: Mock):
         """Return 200 and display a list of articles."""

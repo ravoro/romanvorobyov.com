@@ -1,10 +1,15 @@
 from unittest.mock import patch, Mock
 
+from app.controllers import blog_article
 from app.repositories import ArticleRepo, Article
 from tests import BaseCase, response_html
 
 
 class Test(BaseCase):
+    def setUp(self):
+        super().setUp()
+        blog_article.cache_clear()
+
     @patch.object(ArticleRepo, 'get')
     def test_ok(self, mock_get: Mock):
         """Return 200 and display the requested article."""
